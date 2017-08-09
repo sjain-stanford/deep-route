@@ -2,3 +2,5 @@
 *.pyc
 .env/*
 data/*.hdf5
+model/data/*.hdf5
+model/training/*/saved_model_params
