@@ -1,4 +1,4 @@
-# Deep Route
+# Deep-Route
 
 This repository contains the PyTorch implementation and dataset generation code for the paper
 
@@ -13,9 +13,13 @@ arXiv-cs.CV (Computer Vision and Pattern Recognition) 2017
 
 We design and train a deep, fully convolutional neural network that learns to route a circuit layout net with appropriate choice of metal tracks and wire class combinations. Inputs to the network are the encoded layouts containing spatial location of pins to be routed. After 15 fully convolutional stages followed by a score comparator, the network outputs 8 layout layers (corresponding to 4 route layers, 3 via layers and an identity-mapped pin layer) which are then decoded to obtain the routed layouts.
 
-![Proposed FCN Model](https://github.com/sjain-stanford/deep-route/blob/master/figs/Network.png)
+**Proposed FCN Model**
+<img src='figs/Network.png'>
 
-### Cite
+**Training samples (left: data, right: labels) from generated dataset**
+<img src='figs/sample_data.jpg'>
+
+## Cite
 If you find this work useful in your research, please cite:
 ```
 @article{jain2017route,
@@ -26,7 +30,7 @@ If you find this work useful in your research, please cite:
 }
 ```
 
-### Installation (Linux)
+## Installation (Linux)
 1. Fork [Github repository](https://github.com/sjain-stanford/deep-route)
 2. Setup virtualenv and install dependencies
      * `./setup_virtualenv.sh`  
@@ -35,7 +39,7 @@ If you find this work useful in your research, please cite:
 4. Activate virtualenv, start Jupyter notebook
     * `./start_jupyter_env.sh`
 
-### Dataset generation
+## Dataset generation
 Run the script `./datagen/gen_data.py` to generate training data of shape (N, 1, H, W) and labels of shape (N, 8, H, W) stored using [HDF5 (h5py)](https://github.com/h5py/h5py). Default parameters used for the paper are `H = W = 32`, and `pin_range = (2, 6)`, but feel free to modify as desired.
 ```
 python ./datagen/gen_data.py
@@ -47,7 +51,7 @@ python ./datagen/gen_data.py
 mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ```
 
-### Train the FCN model
+## Train the FCN model
 ```
 cd ./model
 python ./train_fcn_pytorch.py
