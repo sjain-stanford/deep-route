@@ -37,7 +37,7 @@ python ./datagen/gen_data.py
 mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ```
 
-## Train FCN Model (PyTorch)
+## Train FCN Network (in PyTorch)
 Switch to `./model/` dir and run the script `./train_fcn_pytorch.py` to train the FCN model with default options, or use the switch `--help` to display a list of options and their defaults.
 ```
 cd ./model/
@@ -66,7 +66,7 @@ optional arguments:
   --print-freq N   print frequency (default: 10)
 ```
 
-To run on GPU, provide switch `--use_gpu`. Best model parameters (based on F-1 score on validation set) are saved to `./model/training/` dir every epoch, along with loss and training curves. If the switch `--pretrained` is provided, model is pre-loaded with saved parameters before training. With `--adapt_lr`, a learning rate delay by factor of 10 is applied every 30 epochs.
+To run on GPU, provide switch `--use_gpu`. Best model parameters (based on F-1 score on validation set) are saved to `./model/training/` dir every epoch, along with loss and training curves. If the switch `--pretrained` is provided, model is pre-loaded with saved parameters before training. With `--adapt_lr`, a learning rate decay factor of 10 is applied every 30 epochs.
 
 ## Cite
 If you find this work useful in your research, please cite:
