@@ -16,17 +16,6 @@ We design and train a deep, fully convolutional neural network that learns to ro
 **Training samples (left: data, right: labels) from the generated dataset**
 <img src='figs/sample_data.jpg'>
 
-## Cite
-If you find this work useful in your research, please cite:
-```
-@article{jain2017route,
-  title={Training a Fully Convolutional Neural Network to Route Integrated Circuits},
-  author={Jain, Sambhav R and Okabe, Kye},
-  journal={arXiv preprint arXiv:1706.08948},
-  year={2017}
-}
-```
-
 ## Install (Linux)
 1. Fork [this GitHub repository](https://github.com/sjain-stanford/deep-route)
 2. Setup virtualenv and install dependencies
@@ -49,7 +38,7 @@ mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ```
 
 ## Train FCN Model (PyTorch)
-Run the script `./train_fcn_pytorch.py` to train the FCN model with default options, or use the switch `--help` to get a list of options.
+Switch to `./model/` dir and run the script `./train_fcn_pytorch.py` to train the FCN model with default options, or use the switch `--help` to display a list of options and their defaults.
 ```
 cd ./model/
 python ./train_fcn_pytorch.py --help
@@ -77,4 +66,15 @@ optional arguments:
   --print-freq N   print frequency (default: 10)
 ```
 
-To run on GPU, provide switch `--use_gpu`. Best model state/parameters every epoch (based on validation set F-1 score) are saved to `./model/training` dir, which is then loaded if switch `--pretrained` is provided.
+To run on GPU, provide switch `--use_gpu`. Best model parameters (based on F-1 score on validation set) are saved to `./model/training/` dir every epoch, along with loss and training curves. If the switch `--pretrained` is provided, model is pre-loaded with saved parameters before training. With `--adapt_lr`, a learning rate delay by factor of 10 is applied every 30 epochs.
+
+## Cite
+If you find this work useful in your research, please cite:
+```
+@article{jain2017route,
+  title={Training a Fully Convolutional Neural Network to Route Integrated Circuits},
+  author={Jain, Sambhav R and Okabe, Kye},
+  journal={arXiv preprint arXiv:1706.08948},
+  year={2017}
+}
+```
