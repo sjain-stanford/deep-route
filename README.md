@@ -16,7 +16,7 @@ We design and train a deep, fully convolutional neural network that learns to ro
 **Proposed FCN Model**
 <img src='figs/Network.png'>
 
-**Training samples (left: data, right: labels) from generated dataset**
+**Training samples (left: data, right: labels) from the generated dataset**
 <img src='figs/sample_data.jpg'>
 
 ## Cite
@@ -30,16 +30,16 @@ If you find this work useful in your research, please cite:
 }
 ```
 
-## Installation (Linux)
-1. Fork [Github repository](https://github.com/sjain-stanford/deep-route)
+## Install (Linux)
+1. Fork [this GitHub repository](https://github.com/sjain-stanford/deep-route)
 2. Setup virtualenv and install dependencies
-     * `./setup_virtualenv.sh`  
+     * `./setup_virtualenv.sh`
 3. Install PyTorch
-     * `./setup_pytorch.sh`    
+     * `./setup_pytorch.sh` 
 4. Activate virtualenv, start Jupyter notebook
     * `./start_jupyter_env.sh`
 
-## Dataset generation
+## Generate Dataset
 Run the script `./datagen/gen_data.py` to generate training data of shape (N, 1, H, W) and labels of shape (N, 8, H, W) stored using [HDF5 (h5py)](https://github.com/h5py/h5py). Default parameters used for the paper are `H = W = 32`, and `pin_range = (2, 6)`, but feel free to modify as desired.
 ```
 python ./datagen/gen_data.py
@@ -51,7 +51,7 @@ python ./datagen/gen_data.py
 mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ```
 
-## Train the FCN model
+## Train FCN Model (PyTorch)
 ```
 cd ./model
 python ./train_fcn_pytorch.py
