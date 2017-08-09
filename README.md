@@ -1,6 +1,6 @@
 # Deep-Route
 
-This repository contains the PyTorch implementation and dataset generation code for the paper
+This repository contains PyTorch implementation and dataset generation code for the paper
 
 **[Training a Fully Convolutional Neural Network to Route Integrated Circuits](https://arxiv.org/abs/1706.08948)**
 <br>
@@ -49,7 +49,7 @@ mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ```
 
 ## Train FCN Model (PyTorch)
-Train the FCN model using default parameters by running `./train_fcn_pytorch.py`, or use the switch `--help` to get a list of parameters.
+Run the script `./train_fcn_pytorch.py` to train the FCN model with default options, or use the switch `--help` to get a list of options.
 ```
 cd ./model/
 python ./train_fcn_pytorch.py --help
@@ -77,3 +77,4 @@ optional arguments:
   --print-freq N   print frequency (default: 10)
 ```
 
+To run on GPU, provide switch `--use_gpu`. Best model state/parameters every epoch (based on validation set F-1 score) are saved to `./model/training` dir, which is then loaded if switch `--pretrained` is provided.
