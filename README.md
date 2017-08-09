@@ -51,6 +51,7 @@ mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ## Train FCN Model (PyTorch)
 Train the FCN model using default parameters by running `./train_fcn_pytorch.py`, or use the switch `--help` to get a list of parameters.
 ```
+cd ./model/
 python ./train_fcn_pytorch.py --help
 ```
 
