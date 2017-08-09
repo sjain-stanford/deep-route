@@ -1,10 +1,18 @@
-# RouteAI
-Training a Fully Convolutional Neural Network to Route Integrated Circuits
+# Training a Fully Convolutional Neural Network to Route Integrated Circuits (deep-route)
 
-https://arxiv.org/abs/1706.08948
+### Installation (Linux)
+1. Clone git repository (https://github.com/sjain-stanford/deep-route) to local
+2. Setup virtualenv, install dependencies, install PyTorch
+    `./setup_virtualenv.sh`
+    `./setup_pytorch.sh`
+3. Run Jupyter notebook
+    `./start_jupyter_env.sh`
 
-#### To generate training data:
+### Generate training data:
 `python ./datagen/gen_data.py`
 
-#### To train network
+### To train network
 `python ./net/baseline2.py`
+
+### arXiv link
+https://arxiv.org/abs/1706.08948
