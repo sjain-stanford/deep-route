@@ -23,7 +23,7 @@ from torch.utils.data import DataLoader, TensorDataset
 sys.path.append('../')
 from datagen.decoder import decodeData
 
-parser = argparse.ArgumentParser(description='deep-route: FCN Model Training')
+parser = argparse.ArgumentParser(description='Deep-Route: Training a deep FCN network to route circuit layouts.')
 parser.add_argument('--data', metavar='PATH', default=os.getcwd()+'/data/', help='path to dataset (default: ./data/)')
 parser.add_argument('--batch_size', metavar='N', default=100, type=int, help='mini-batch size (default: 100)')
 parser.add_argument('--num_workers', metavar='N', default=4, type=int, help='number of data loading workers (default: 4)')
@@ -48,17 +48,11 @@ def main(args):
     dtype = torch.FloatTensor
   
   # Dataset filenames
-  #train_fname = 'train_4_32pix.hdf5'
-  #val_fname = 'val_4_32pix.hdf5'
-  #train_fname = 'train_1k_32pix.hdf5'
-  #val_fname = 'val_200_32pix.hdf5'
   train_fname = 'train_50k_32pix.hdf5'
   val_fname = 'val_10k_32pix.hdf5'
-  #test_fname = 'test_10k_32pix.hdf5'
   
   # Save dir
   train_id = 'train50k_val10k_pix32' + '_lr' + str(args.lr) + '_reg' + str(args.reg) + '_batchsize' + str(args.batch_size) + '_epochs' + str(args.num_epochs) + '_gpu' + str(args.use_gpu)
-  #train_id = 'temp'
   save_dir = os.getcwd() + '/training/' + train_id + '/'
   if not os.path.exists(save_dir):
     os.makedirs(save_dir)
@@ -76,11 +70,6 @@ def main(args):
   X_val = np.asarray(val_data['X'])
   Y_val = np.asarray(val_data['Y'])
   print("X_val: %s \nY_val: %s\n" %(X_val.shape, Y_val.shape))
-
-  #test_data = h5py.File(args.data + test_fname, 'r')
-  #X_test = np.asarray(test_data['X'])
-  #Y_test = np.asarray(test_data['Y'])
-  #print("X_test: %s \nY_test: %s\n" %(X_test.shape, Y_test.shape))
 
   # Dimensions
   N_train = X_train.shape[0]
@@ -115,10 +104,6 @@ def main(args):
     nn.BatchNorm2d(16),
     nn.LeakyReLU(inplace=True),
                     
-    #nn.Conv2d(1, 16, kernel_size=3, stride=1, padding=1, bias=True),    # Output (N, 16, 32, 32)
-    #nn.BatchNorm2d(16),
-    #nn.LeakyReLU(inplace=True),
-
     nn.Conv2d(16, 16, kernel_size=3, stride=1, padding=1, bias=True),    # Output (N, 16, 32, 32)
     nn.BatchNorm2d(16),
     nn.LeakyReLU(inplace=True),
