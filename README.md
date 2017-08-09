@@ -4,10 +4,7 @@ This repository contains the PyTorch implementation and dataset generation code 
 
 **[Training a Fully Convolutional Neural Network to Route Integrated Circuits](https://arxiv.org/abs/1706.08948)**
 <br>
-[Sambhav R. Jain](https://sites.google.com/view/sjain/home)\*,
-Kye Okabe\*
-<br>
-(\* equal contribution)
+[Sambhav R. Jain](https://sites.google.com/view/sjain/home), Kye Okabe
 <br>
 arXiv-cs.CV (Computer Vision and Pattern Recognition) 2017
 
@@ -52,8 +49,8 @@ mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ```
 
 ## Train FCN Model (PyTorch)
+Train the FCN model using default parameters by running `./train_fcn_pytorch.py`, or use the switch `--help` to get a list of parameters.
 ```
-cd ./model
 python ./train_fcn_pytorch.py --help
 ```
 
