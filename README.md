@@ -54,8 +54,28 @@ mv ./data/layout_data.hdf5 ./model/data/val_10k_32pix.hdf5
 ## Train FCN Model (PyTorch)
 ```
 cd ./model
-python ./train_fcn_pytorch.py
-
+python ./train_fcn_pytorch.py --help
 ```
 
+```
+usage: train_fcn_pytorch.py [-h] [--data PATH] [--batch_size N]
+                            [--num_workers N] [--num_epochs N] [--use_gpu]
+                            [--pretrained] [--lr LR] [--adapt_lr] [--reg REG]
+                            [--print-freq N]
+
+Deep-Route: Training a deep FCN network to route circuit layouts.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --data PATH      path to dataset (default: ./data/)
+  --batch_size N   mini-batch size (default: 100)
+  --num_workers N  number of data loading workers (default: 4)
+  --num_epochs N   number of total epochs to run (default: 200)
+  --use_gpu        use GPU if available
+  --pretrained     use pre-trained model
+  --lr LR          initial learning rate (default: 5e-4)
+  --adapt_lr       use learning rate schedule
+  --reg REG        regularization strength (default: 1e-5)
+  --print-freq N   print frequency (default: 10)
+```
 
