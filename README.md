@@ -1,6 +1,6 @@
-# deep-route
+# Deep Route
 
-PyTorch implementation and dataset generation code for the paper
+This repository contains the PyTorch implementation and dataset generation code for the paper
 
 **[Training a Fully Convolutional Neural Network to Route Integrated Circuits](https://arxiv.org/abs/1706.08948)**
 <br>
@@ -11,8 +11,12 @@ Kye Okabe\*
 <br>
 arXiv-cs.CV (Computer Vision and Pattern Recognition) 2017
 
+We design and train a deep, fully convolutional neural network that learns to route a circuit layout net with appropriate choice of metal tracks and wire class combinations. Inputs to the network are the encoded layouts containing spatial location of pins to be routed. After 15 fully convolutional stages followed by a score comparator, the network outputs 8 layout layers (corresponding to 4 route layers, 3 via layers and an identity-mapped pin layer) which are then decoded to obtain the routed layouts.
+
+![alt text](http://url/to/img.png)
+
 ### Cite
-If you find this useful in your research, please cite:
+If you find this work useful in your research, please cite:
 ```
 @article{jain2017route,
   title={Training a Fully Convolutional Neural Network to Route Integrated Circuits},
