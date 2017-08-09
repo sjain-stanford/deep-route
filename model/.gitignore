@@ -1,0 +1,2 @@
+data/*.hdf5
+training/*/saved_model_params

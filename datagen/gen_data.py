@@ -103,8 +103,6 @@ def selectWireClass(xlen, ylen):
 
     # m2 1x w=20nm horz
     rho_tw_m2_1x = 106.45 # ohm/um
-    # m3 1x w=22nm vert
-    #rho_tw_m3_1x = 90.625 # ohm/um
     # m3 2x w=40nm vert
     rho_tw_m3_2x = 30.555  # ohm/um
     # m4 1x w=40nm horz

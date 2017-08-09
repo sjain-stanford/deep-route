@@ -12,6 +12,7 @@ cycler==0.10.0
 decorator==4.0.6
 future==0.16.0
 gnureadline==6.3.3
+h5py==2.7.0
 ipykernel==4.2.2
 ipython==4.0.1
 ipython-genutils==0.1.0
