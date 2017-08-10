@@ -26,7 +26,7 @@ We design and train a deep, fully convolutional neural network that learns to ro
     * `./start_jupyter_env.sh`
 
 ## Generate Dataset
-Run the script `./datagen/gen_data.py` to generate training data of shape (N, 1, H, W) and labels of shape (N, 8, H, W) stored using [HDF5 (h5py)](https://github.com/h5py/h5py). Default parameters used for the paper are `H = W = 32`, and `pin_range = (2, 6)`, but feel free to modify as desired.
+Run the script `./datagen/gen_data.py` to generate training data of shape (N, 1, H, W) and labels of shape (N, 8, H, W) stored using [HDF5 (h5py)](https://github.com/h5py/h5py). Default parameters used for the paper are `H = W = 32`, and `pin_range = (2, 6)`, but feel free to modify as desired. Generating 50,000 image dataset should take < 1 minute.
 ```
 python ./datagen/gen_data.py
 >> Enter the number of images to be generated: 50000
