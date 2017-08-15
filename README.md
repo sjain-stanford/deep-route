@@ -4,7 +4,7 @@ This repository contains PyTorch implementation and dataset generation code for 
 
 **[Training a Fully Convolutional Neural Network to Route Integrated Circuits](https://arxiv.org/abs/1706.08948)**
 <br>
-[Sambhav R. Jain](https://sites.google.com/view/sjain/home), Kye Okabe
+[Sambhav R. Jain](https://bit.ly/sjain-stanford), Kye Okabe
 <br>
 arXiv-cs.CV (Computer Vision and Pattern Recognition) 2017
 
