@@ -66,7 +66,7 @@ optional arguments:
   --print-freq N   print frequency (default: 10)
 ```
 
-To run on GPU, provide switch `--use_gpu`. Best model parameters (based on F-1 score on validation set) are saved to `./model/training/` dir every epoch, along with loss and training curves. If the switch `--pretrained` is provided, model is pre-loaded with saved parameters before training. Pretrained weights (for batch size 10 and 100) are made available at [my-git-lfs](https://github.com/sjain-stanford/my-git-lfs). With `--adapt_lr`, a learning rate decay factor of 10 is applied every 30 epochs.
+To run on GPU, provide switch `--use_gpu`. Best model parameters (based on F-1 score on validation set) are saved to `./model/training/` dir every epoch, along with loss and training curves. If the switch `--pretrained` is provided, model is pre-loaded with saved parameters before training. Pretrained weights (for batch size 10 and 100) are made available [here](https://github.com/sjain-stanford/pretrained-weights). With `--adapt_lr`, a learning rate decay factor of 10 is applied every 30 epochs.
 
 ## Cite
 If you find this work useful in your research, please cite:
